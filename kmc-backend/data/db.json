@@ -1,0 +1,90 @@
+{
+  "activities": [
+    {
+      "id": "seed-1",
+      "title": "Field Ministry Outreach",
+      "category": "Outreach",
+      "description": "Weekend field work — visiting and ministering to churches and communities.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-2",
+      "title": "Inner Healing Friday",
+      "category": "Inner Healing",
+      "description": "Counselling, healing, deliverance and prayer session.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-3",
+      "title": "KCM-TV Recording",
+      "category": "KCM-TV",
+      "description": "Weekly broadcast recording for Kingdom Call Mission TV.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-4",
+      "title": "Children & Teens Mentorship",
+      "category": "Children & Teens",
+      "description": "Equipping and empowering the next generation.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-5",
+      "title": "Welfare Project",
+      "category": "Welfare",
+      "description": "Practical support reaching the needy in the community.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-6",
+      "title": "Family & Marriage Forum",
+      "category": "Outreach",
+      "description": "Counselling and mentorship for couples and families.",
+      "image": "",
+      "imagePublicId": "",
+      "date": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "seed-t1",
+      "name": "A restored family",
+      "context": "Family & Marriage Forum",
+      "quote": "We came in broken and barely speaking to each other. Through the counselling and prayer here, we found our way back — not just as a couple, but as a family that can face anything together.",
+      "approved": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-t2",
+      "name": "A young minister",
+      "context": "Mentorship program",
+      "quote": "The mentorship gave me direction I didn't know I needed. I came looking for a place to serve and found a father in the faith who believed in me before I believed in myself.",
+      "approved": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-t3",
+      "name": "A grateful community member",
+      "context": "Welfare Project",
+      "quote": "When we had nothing, this ministry showed up — not just with help, but with hope. That is something we will never forget.",
+      "approved": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

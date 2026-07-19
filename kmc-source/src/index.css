@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #2F9E5F;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #C7DACD;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2F9E5F;
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #0B5D3B 0%, #2F9E5F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .eyebrow {
+    @apply font-label text-xs tracking-[0.2em] uppercase text-gold font-semibold;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 1.4em;
+    height: 1px;
+    background: currentColor;
+    margin-right: 0.6em;
+    vertical-align: middle;
+  }
+
+  .card {
+    @apply bg-white border border-border rounded-2xl shadow-soft transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lift hover:-translate-y-1 hover:border-forest/30;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-brand-gradient text-white font-label font-semibold text-sm shadow-lift hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border-2 border-border font-label font-semibold text-sm text-ink hover:border-forest hover:text-forest hover:bg-surface transition-all duration-200;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gold-gradient text-ink font-label font-semibold text-sm shadow-glow hover:brightness-105 hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .section-eyebrow-line {
+    @apply w-14 h-[3px] rounded-full bg-brand-gradient mb-4;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #0B5D3B, #C99A2E);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Signature ribbon motif — echoes the crowned crest's diagonal band */
+  .ribbon-strip {
+    background: repeating-linear-gradient(
+      115deg,
+      #08432A 0px,
+      #08432A 46px,
+      #C99A2E 46px,
+      #C99A2E 58px,
+      #7A1F1F 58px,
+      #7A1F1F 70px,
+      #F4E8C1 70px,
+      #F4E8C1 82px
+    );
+  }
+
+  /* Subtle grain to keep flat colour fields from feeling sterile */
+  .texture-grain {
+    position: relative;
+  }
+  .texture-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+
+  .dark-panel {
+    @apply bg-brand-gradient-deep text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "kingdom-missions-centre-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix kmc-backend && npm install --prefix kmc-source",
+    "dev": "concurrently -n BACKEND,FRONTEND -c green,cyan \"npm run dev --prefix kmc-backend\" \"npm run dev --prefix kmc-source\"",
+    "dev:backend": "npm run dev --prefix kmc-backend",
+    "dev:frontend": "npm run dev --prefix kmc-source",
+    "build": "npm run build --prefix kmc-source"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
