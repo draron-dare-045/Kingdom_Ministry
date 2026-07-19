@@ -3,6 +3,7 @@ services:
     name: kmc-backend
     env: node
     plan: free
+    rootDir: kmc-backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -26,7 +27,6 @@ services:
         sync: false
       - key: CLOUDINARY_API_SECRET
         sync: false
-
 databases:
   - name: kmc-db
     plan: free
