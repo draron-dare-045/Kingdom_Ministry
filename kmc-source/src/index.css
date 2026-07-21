@@ -7,7 +7,7 @@ html {
 }
 
 ::selection {
-  background: #2F9E5F;
+  background: #14432B;
   color: #ffffff;
 }
 
@@ -22,12 +22,12 @@ html {
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2F9E5F;
+  background: #14432B;
 }
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #0B5D3B 0%, #2F9E5F 100%);
+    background: linear-gradient(135deg, #042417 0%, #14432B 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -80,7 +80,7 @@ html {
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, #0B5D3B, #C99A2E);
+    background: linear-gradient(135deg, #042417, #C99A2E);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -96,8 +96,8 @@ html {
   .ribbon-strip {
     background: repeating-linear-gradient(
       115deg,
-      #08432A 0px,
-      #08432A 46px,
+      #031B10 0px,
+      #031B10 46px,
       #C99A2E 46px,
       #C99A2E 58px,
       #7A1F1F 58px,

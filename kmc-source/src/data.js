@@ -20,11 +20,11 @@ export const org = {
   revived: 'Revised and revived, March 2026',
   phone: '0721 924 462',
   phoneSecondary: '0700 756 611',
-  whatsappNumber: '254721924462',
+  whatsappNumber: '0714 030 853',
 }
 
 export const socialLinks = [
-  { label: 'Kingdom Missions Centre', platform: 'facebook', href: 'https://facebook.com/KingdomMissionsCentre' },
+  { label: 'Kingdom Call Mi ssion Network', platform: 'facebook', href: 'https://facebook.com/KingdomMissionsCentre' },
   { label: 'Kingdom Relationships, Families & Marriages', platform: 'facebook', href: 'https://facebook.com/KingdomRelationshipsFamiliesMarriages' },
   { label: 'Pst. Donald Wathome', platform: 'facebook', href: 'https://facebook.com/PstDonaldWathome' },
   { label: '@donald_wathome', platform: 'tiktok', href: 'https://tiktok.com/@donald_wathome' },
@@ -38,7 +38,7 @@ export const vision = [
   { title: 'Restoring the gospel of the kingdom', description: 'Restoration of the gospel of the kingdom of God to the body of Christ and to the nations of the world.' },
   { title: 'Inner healing, healing & deliverance', description: 'Ministering inner healing, physical healing, deliverance and restoration to the body of Christ and to the nations of the world. Isaiah 61:1-11, Matthew 4:23-25, Acts 10:38, Acts 19:1-20.' },
   { title: 'Raising young gospel ministers', description: 'Raising and mentoring young gospel ministers in life and in ministry.' },
-  { title: 'Equipping children & teenagers', description: 'Equipping, mentoring and empowering little children and teenagers for a fast-changing world.' },
+  { title: 'Equipping, mentoring and empowering little children and teenagers', description: 'Equipping, mentoring and empowering little children and teenagers for a fast-changing world.' },
 ]
 
 export const missionIntro =
