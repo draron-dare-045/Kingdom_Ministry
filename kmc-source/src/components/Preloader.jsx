@@ -2,11 +2,6 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { org } from '../data'
 
-// Simple, predictable splash: show for a fixed minimum time, then fade out.
-// (Previously this waited on document.readyState / the window "load" event,
-// which fires at wildly different times across dev vs. production and
-// cached vs. cold loads — so the splash could barely flash, or hang until
-// a 6s fallback kicked in. A flat timer behaves the same way every time.)
 const MIN_DISPLAY_MS = 2600
 const EXIT_ANIM_MS = 600
 
@@ -34,17 +29,13 @@ export default function Preloader({ onDone }) {
         <motion.div
           key="preloader"
           initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02, transition: { duration: EXIT_ANIM_MS / 1000, ease: 'easeInOut' } }}
-          className="fixed inset-0 z-[100] bg-cream texture-grain overflow-hidden"
+          className="fixed inset-0 z-[100] bg-cream overflow-hidden"
         >
-          <div className="absolute top-0 inset-x-0 h-1.5 ribbon-strip" />
-          <div className="absolute bottom-0 inset-x-0 h-1.5 ribbon-strip" />
-
           <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-forest/10 blur-[110px]" />
           <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-gold/15 blur-[110px]" />
 
-          {/* Logo is pinned to the exact center of the viewport, independent
-              of the title/tagline below it, so it never drifts off-center. */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -60,9 +51,6 @@ export default function Preloader({ onDone }) {
             />
           </motion.div>
 
-          {/* Title + tagline sit below the logo's fixed center point, offset
-              by half the logo height plus a fixed gap — they never pull the
-              logo's own centering. */}
           <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-sm px-6 flex flex-col items-center top-[calc(50%+132px)] sm:top-[calc(50%+172px)]">
             <motion.h1
               initial={{ opacity: 0, y: 8 }}
@@ -87,7 +75,8 @@ export default function Preloader({ onDone }) {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: (MIN_DISPLAY_MS - 200) / 1000, ease: 'easeInOut' }}
-            className="absolute bottom-14 left-1/2 -translate-x-1/2 w-[160px] h-[2px] bg-brand-gradient origin-left rounded-full"
+            className="absolute bottom-14 left-1/2 -translate-x-1/2 w-[160px] h-[2px] origin-left rounded-full"
+            style={{ background: 'linear-gradient(135deg, #031B10 0%, #113925 100%)' }}
           />
         </motion.div>
       )}

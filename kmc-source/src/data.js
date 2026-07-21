@@ -18,7 +18,7 @@ export const org = {
   },
   registration: 'Registered as a limited company by guarantee \u00B7 Non-profit Christian parachurch ministry',
   revived: 'Revised and revived, March 2026',
-  phone: '0721 924 462',
+  phone: '0714 030 853',
   phoneSecondary: '0700 756 611',
   whatsappNumber: '0714 030 853',
 }
