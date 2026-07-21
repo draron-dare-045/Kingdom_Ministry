@@ -36,10 +36,8 @@ export default function Preloader({ onDone }) {
           <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-forest/10 blur-[110px]" />
           <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-gold/15 blur-[110px]" />
 
-          {/* Outer div: centering ONLY, no animation — so nothing ever
-              overwrites this transform.
-              Inner motion.div: animation ONLY, no positioning classes —
-              it just inherits its position from the parent. */}
+          {/* Outer div: centering ONLY, no animation.
+              Inner motion.div: animation ONLY, no positioning classes. */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
@@ -76,13 +74,17 @@ export default function Preloader({ onDone }) {
             </motion.p>
           </div>
 
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: (MIN_DISPLAY_MS - 200) / 1000, ease: 'easeInOut' }}
-            className="absolute bottom-14 left-1/2 -translate-x-1/2 w-[160px] h-[2px] origin-left rounded-full"
-            style={{ background: 'linear-gradient(135deg, #031B10 0%, #113925 100%)' }}
-          />
+          {/* Same split here: outer div centers the bar, inner motion.div
+              only handles the scaleX animation. */}
+          <div className="absolute bottom-14 left-1/2 -translate-x-1/2 w-[160px]">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: (MIN_DISPLAY_MS - 200) / 1000, ease: 'easeInOut' }}
+              className="h-[2px] origin-left rounded-full"
+              style={{ background: 'linear-gradient(135deg, #031B10 0%, #113925 100%)' }}
+            />
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
