@@ -6,20 +6,19 @@
 
 export const org = {
   name: 'Kingdom Call Mission Network',
-  networkName: 'Kingdom Missions Centre',
   shortCode: 'K.C.M-NETWORK',
-  verseTag: 'ISAIAH 61 \u00B7 MINISTRY',
+  verseTag: 'ISAIAH 61:1-11 \u00B7 MINISTRY',
   tagline:
     'A platform, a partner and a trusted link for restoring the gospel of the kingdom \u2014 and for inner healing, healing, deliverance and restoration.',
   heroVerse: {
-    reference: 'Isaiah 61:1 (KJV)',
+    reference: 'Isaiah 61:1-11 (KJV)',
     text:
       'The Spirit of the Lord God is upon me; because the Lord hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound.',
   },
   registration: 'Registered as a limited company by guarantee \u00B7 Non-profit Christian parachurch ministry',
-  phone: '0714 030 853',
-  phoneSecondary: '0700 756 611',
-  whatsappNumber: '0714 030 853',
+  phone: '0721 924 462',
+  phoneSecondary: '0714 030 853',
+  whatsappNumber: '0721 924 462',
 }
 
 export const socialLinks = [
