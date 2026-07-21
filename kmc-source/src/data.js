@@ -5,10 +5,9 @@
 // ============================================================
 
 export const org = {
-  name: 'Kingdom Missions Centre',
-  networkName: 'Kingdom Call Mission Network',
+  name: 'Kingdom Call Mission Network',
+  networkName: 'Kingdom Missions Centre',
   shortCode: 'K.C.M-NETWORK',
-  congregation: 'Shiloh Worship Ministries',
   verseTag: 'ISAIAH 61 \u00B7 MINISTRY',
   tagline:
     'A platform, a partner and a trusted link for restoring the gospel of the kingdom \u2014 and for inner healing, healing, deliverance and restoration.',
