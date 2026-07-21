@@ -36,20 +36,25 @@ export default function Preloader({ onDone }) {
           <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-forest/10 blur-[110px]" />
           <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-gold/15 blur-[110px]" />
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
-            <motion.img
-              src="/logo.svg"
-              alt={org.name}
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-56 h-56 sm:w-72 sm:h-72 object-contain rounded-3xl shadow-lift"
-            />
-          </motion.div>
+          {/* Outer div: centering ONLY, no animation — so nothing ever
+              overwrites this transform.
+              Inner motion.div: animation ONLY, no positioning classes —
+              it just inherits its position from the parent. */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+            >
+              <motion.img
+                src="/logo.svg"
+                alt={org.name}
+                animate={{ scale: [1, 1.04, 1] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+                className="w-56 h-56 sm:w-72 sm:h-72 object-contain rounded-3xl shadow-lift"
+              />
+            </motion.div>
+          </div>
 
           <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-sm px-6 flex flex-col items-center top-[calc(50%+132px)] sm:top-[calc(50%+172px)]">
             <motion.h1
