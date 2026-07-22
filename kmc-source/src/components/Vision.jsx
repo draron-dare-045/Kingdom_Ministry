@@ -15,7 +15,7 @@ export default function Vision() {
         >
           <p className="eyebrow mb-3">our vision</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">
-            To be a powerful platform, partner and network
+          TO BE A POWERFUL PLATFORM, PARTNER AND NETWORK FOR:-
           </h2>
         </motion.div>
 

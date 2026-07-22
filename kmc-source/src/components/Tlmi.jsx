@@ -17,10 +17,10 @@ export default function Tlmi() {
           transition={{ duration: 0.6 }}
           className="mb-14 max-w-3xl"
         >
-          <p className="eyebrow mb-3">mentorship & talks</p>
+          <p className="eyebrow mb-3">MOTIVATIONAL & INSPIRATIONAL TALKS. </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink flex items-center gap-3">
             <Mic2 className="text-forest" size={26} />
-            T.L.M.I Talks
+            T.L.M.I -TALKS (Transforming Lives Motivational & Inspirational Talks)
           </h2>
           <p className="text-muted mt-3 leading-relaxed">{tlmi.about}</p>
           <p className="text-muted mt-3 leading-relaxed">{tlmi.purpose}</p>

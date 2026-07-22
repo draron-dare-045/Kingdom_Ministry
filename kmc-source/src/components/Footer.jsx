@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom'
 import { org, socialLinks } from '../data'
-import { FacebookIcon, TiktokIcon } from './BrandIcons'
+import {
+  FacebookIcon,
+  TiktokIcon,
+  YoutubeIcon,
+} from './BrandIcons'
 
 const platformIcon = {
   facebook: FacebookIcon,
   tiktok: TiktokIcon,
+  youtube: YoutubeIcon,
 }
 
 export default function Footer() {
   return (
     <footer className="bg-[#0A2418] text-white">
-      {/* Gold Accent */}
       <div className="h-[2px] bg-gold" />
-
       <div className="max-w-4xl mx-auto px-4 py-4">
-        
-        {/* Logo */}
         <div className="flex items-center justify-center gap-2">
           <img
             src="/logo.png"
@@ -27,8 +28,6 @@ export default function Footer() {
             {org.name}
           </span>
         </div>
-
-        {/* Navigation */}
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-3">
           <Link to="/about" className="text-xs text-white/70 hover:text-gold">
             About
@@ -46,14 +45,13 @@ export default function Footer() {
             Contact
           </Link>
         </div>
-
-        {/* Socials */}
         <div className="flex justify-center gap-2 mt-3">
           {socialLinks
             .filter(
               (s) =>
                 s.platform === 'facebook' ||
-                s.platform === 'tiktok'
+                s.platform === 'tiktok' ||
+                s.platform === 'youtube'
             )
             .map((s) => {
               const Icon = platformIcon[s.platform]
@@ -64,6 +62,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={s.label}
                   className="w-7 h-7 rounded-full bg-white/10 hover:bg-gold hover:text-black transition flex items-center justify-center"
                 >
                   <Icon size={12} />
@@ -71,8 +70,6 @@ export default function Footer() {
               )
             })}
         </div>
-
-        {/* Copyright */}
         <div className="mt-3 pt-2 border-t border-white/10 text-center">
           <p className="text-[10px] text-white/50">
             © {new Date().getFullYear()} {org.name}

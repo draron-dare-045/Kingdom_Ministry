@@ -21,7 +21,7 @@ export const socialLinks = [
   { label: 'Pst. Donald Wathome', platform: 'facebook', href: 'https://facebook.com/PstDonaldWathome' },
   { label: '@donald_wathome', platform: 'tiktok', href: 'https://tiktok.com/@donald_wathome' },
   // TODO: swap in the real Kingdom Call Mission TV channel URL
-  { label: 'Kingdom Call Mission TV', platform: 'youtube', href: '#' },
+  { label: 'Kingdom Call Mission TV', platform: 'youtube', href: 'https://youtube.com/@donaldevangelist123?si=VoYBUds68PO_CTA-' },
 ]
 
 export const heroBadges = ['Restoration', 'Healing & Deliverance', 'Mentorship']
@@ -99,7 +99,7 @@ export const founders = {
   names: 'Pastor Donald & Monica',
   roles: 'Ordained ministers \u00B7 trained counsellors \u00B7 church planters \u00B7 motivational speakers',
   photo: '/founders.jpg',
-  word: 'For over twenty years we resisted this call, afraid of what it would cost to step outside the walls of traditional congregational ministry. But God kept returning us to the story of Mephibosheth \u2014 a broken, displaced man brought out of Lo Debar to the King\u2019s table. That story became our own testimony, and it is why Kingdom Call Mission Network exists today: to be a hand extended to the broken, the hurting and the forgotten, and to restore the gospel of the kingdom to the body of Christ. Whatever battle life or ministry has left you carrying \u2014 in your family, your relationships, your business or your leadership \u2014 you are welcome at this table. Call us. Isaiah 61 is not just our verse; it is our assignment.',
+  word: 'For over twenty years we resisted this call, afraid of what it would cost to step outside the walls of traditional congregational ministry. But God kept returning us to the story of Mephibosheth \u2014 a broken, displaced man brought out of Lo Debar to the King\u2019s table. That story became our own testimony, and it is why Kingdom Call Mission Network exists today: to be a hand extended to the broken, the hurting and the forgotten, and to restore the gospel of the kingdom to the body of Christ. Whatever battle life or ministry has left you carrying \u2014 in your family, your relationships, your business or your leadership \u2014 you are welcome at this table. Jesus Christ the King of Kings is inviting everyone to his Kingdom table . Call us. Isaiah 61:1-11 is not just our passage ; it is our assignment.',
   quoteRef: 'Daniel 5:12,14 \u00B7 "The Daniel\u2019s Call" \u2014 Call us now.',
 }
 
