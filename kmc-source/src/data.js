@@ -13,7 +13,7 @@ export const org = {
   heroVerse: {
     reference: 'Isaiah 61:1-11 (KJV)',
     text:
-      'The Spirit of the Lord God is upon me; because the Lord hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound.',
+      'The Spirit of the Lord God is upon me; because the Lord hath anointed me to preach good tidings (news) to the poor; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those that are bound.',
   },
   registration: 'Registered as a limited company by guarantee \u00B7 Non-profit Christian parachurch ministry',
   phone: '0721 924 462',
@@ -22,7 +22,7 @@ export const org = {
 }
 
 export const socialLinks = [
-  { label: 'Kingdom Call Mi ssion Network', platform: 'facebook', href: 'https://facebook.com/KingdomMissionsCentre' },
+  { label: 'Kingdom Call Mission Network', platform: 'facebook', href: 'https://facebook.com/KingdomMissionsCentre' },
   { label: 'Kingdom Relationships, Families & Marriages', platform: 'facebook', href: 'https://facebook.com/KingdomRelationshipsFamiliesMarriages' },
   { label: 'Pst. Donald Wathome', platform: 'facebook', href: 'https://facebook.com/PstDonaldWathome' },
   { label: '@donald_wathome', platform: 'tiktok', href: 'https://tiktok.com/@donald_wathome' },
@@ -55,7 +55,7 @@ export const about = {
   eyebrow: 'who we are',
   heading: 'A platform for restoration',
   paragraphs: [
-    'Kingdom Missions Centre, through the Kingdom Call Mission Network, is a platform, a link and a network for ministering inner healing, physical healing, deliverance and restoration \u2014 to people, churches and communities broken, displaced and crippled by the battles of life and ministry, in family, in relationships, in business and in leadership.',
+    'Kingdom Call Mission Network  is a platform, a link and a network for ministering inner healing, physical healing, deliverance and restoration \u2014 to people, churches and communities broken, displaced and crippled by the battles of life and ministry, in family, in relationships, in business and in leadership.',
     'It is a platform for the restoration of the gospel of the kingdom of God, and for the mentorship of young gospel ministers in life and ministry. It is about meeting the pressing need for equipping, mentoring and empowering little children and teenagers, in church and in society.',
     'It is about restoring hope to the hopeless and inspiring the tired, the exhausted and those about to give up in life and ministry \u2014 and about connecting the skilled, the empowered and the privileged with the needy, the poor and the oppressed.',
   ],
@@ -136,7 +136,7 @@ export const tv = {
 }
 
 export const tlmi = {
-  name: 'Transforming Lives Mentorship, Motivational & Inspirational Talks (T.L.M.I)',
+  name: 'Transforming Lives, Motivational & Mentorship Talks (T.L.M.M)',
   vision: 'To be a reliable platform and link for mentorship, motivational, inspirational and counselling talks.',
   mission: 'Your reliable and trusted source for mentorship, motivation, inspiration and counselling in the time of need \u2014 for joyful living, a highly motivated life, and healthy, successful relationships.',
   about: 'T.L.M.I is an initiative founded by Pastor Donald and Monica out of the call of God to minister to the pressing emotional and social needs in our world today.',
