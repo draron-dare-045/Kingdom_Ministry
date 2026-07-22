@@ -45,6 +45,22 @@ router.post('/', requireAuth, async (req, res, next) => {
 router.put('/:id', requireAuth, async (req, res, next) => {
   try {
     const { title, category, description, image, imagePublicId, date } = req.body || {}
+
+    const existing = await db.getActivity(req.params.id)
+    if (!existing) return res.status(404).json({ error: 'Activity not found.' })
+
+    // If a new/different image is being set (or the image is being
+    // cleared), best-effort delete the old one from Cloudinary so it
+    // doesn't sit around using up free-tier storage.
+    const replacingImage = imagePublicId !== undefined && imagePublicId !== existing.imagePublicId
+    if (replacingImage && existing.imagePublicId && process.env.CLOUDINARY_CLOUD_NAME) {
+      try {
+        await cloudinary.uploader.destroy(existing.imagePublicId)
+      } catch (err) {
+        console.warn('Could not delete old Cloudinary image (continuing anyway):', err.message)
+      }
+    }
+
     const updated = await db.updateActivity(req.params.id, {
       ...(title !== undefined && { title }),
       ...(category !== undefined && { category }),
