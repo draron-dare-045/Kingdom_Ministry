@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Quote, Loader2, Send, CheckCircle2 } from 'lucide-react'
+import { Quote, Loader2, Send, CheckCircle2, Clock } from 'lucide-react'
 import { testimonials as fallbackTestimonials } from '../data'
 import { api } from '../api'
 
@@ -62,6 +62,21 @@ export default function Testimonials() {
           <div className="flex items-center gap-2 text-muted text-sm py-16 justify-center">
             <Loader2 size={16} className="animate-spin" /> Loading testimonials...
           </div>
+        ) : testimonials.length === 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="card flex flex-col items-center justify-center text-center py-20 px-6"
+          >
+            <Clock size={28} className="text-forest mb-4" />
+            <h3 className="font-display text-lg font-semibold text-ink">Coming Soon</h3>
+            <p className="text-sm text-muted mt-2 max-w-sm">
+              We're gathering real stories of restoration from the people and families this ministry has walked
+              with. Testimonies will be shared here soon.
+            </p>
+          </motion.div>
         ) : (
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (

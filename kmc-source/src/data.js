@@ -203,31 +203,13 @@ export const faithStatement = [
 
 export const activityCategories = ['All', 'Outreach', 'Inner Healing', 'KCM-TV', 'Children & Teens', 'Welfare']
 
-export const activities = [
-  { title: 'Field Ministry Outreach', category: 'Outreach', description: 'Weekend field work \u2014 visiting and ministering to churches and communities.', image: '', date: '' },
-  { title: 'Inner Healing Friday', category: 'Inner Healing', description: 'Counselling, healing, deliverance and prayer session.', image: '', date: '' },
-  { title: 'KCM-TV Recording', category: 'KCM-TV', description: 'Weekly broadcast recording for Kingdom Call Mission TV.', image: '', date: '' },
-  { title: 'Children & Teens Mentorship', category: 'Children & Teens', description: 'Equipping and empowering the next generation.', image: '', date: '' },
-  { title: 'Welfare Project', category: 'Welfare', description: 'Practical support reaching the needy in the community.', image: '', date: '' },
-  { title: 'Family & Marriage Forum', category: 'Outreach', description: 'Counselling and mentorship for couples and families.', image: '', date: '' },
-]
+// No real activity posts yet — these will come from the admin dashboard
+// once staff start posting. Kept empty so the Activities section shows
+// its "Coming Soon" empty state instead of placeholder entries.
+export const activities = []
 
-// TODO: replace these three with real testimonies (name, a short location/
-// context line, and the quote). Keep this shape when you swap them in.
-export const testimonials = [
-  {
-    name: 'A restored family',
-    context: 'Family & Marriage Forum',
-    quote: 'We came in broken and barely speaking to each other. Through the counselling and prayer here, we found our way back \u2014 not just as a couple, but as a family that can face anything together.',
-  },
-  {
-    name: 'A young minister',
-    context: 'Mentorship program',
-    quote: 'The mentorship gave me direction I didn\u2019t know I needed. I came looking for a place to serve and found a father in the faith who believed in me before I believed in myself.',
-  },
-  {
-    name: 'A grateful community member',
-    context: 'Welfare Project',
-    quote: 'When we had nothing, this ministry showed up \u2014 not just with help, but with hope. That is something we will never forget.',
-  },
-]
+// No real testimonies collected yet — kept empty so the Testimonials
+// section shows its "Coming Soon" empty state instead of placeholder
+// quotes. Real entries (submitted via the form below, or added by an
+// admin) will follow this shape: { name, context, quote }.
+export const testimonials = []
