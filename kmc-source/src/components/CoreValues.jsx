@@ -1,37 +1,46 @@
 import { motion } from 'framer-motion'
-import { Cross } from 'lucide-react'
 import { coreValues } from '../data'
 
 export default function CoreValues() {
   return (
-    <section id="more" className="relative py-24 md:py-32 bg-surface/60">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="more" className="py-20 md:py-24 bg-surface">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14 max-w-2xl"
+          className="mb-12 text-center"
         >
-          <p className="eyebrow mb-3">what we stand on</p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink">Our Core Values</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-kingdomGreen">
+            Our Core Values
+          </h2>
+
+          <p className="mt-3 text-muted max-w-2xl mx-auto">
+            The principles that guide our ministry, service, and fellowship.
+          </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {coreValues.map((v, i) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {coreValues.map((value, index) => (
             <motion.div
-              key={v.title}
+              key={value.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
-              className="card glow-border p-6 hover:-translate-y-1 transition-transform"
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
+              className="bg-white rounded-2xl border border-border p-6 shadow-soft hover:shadow-lift transition-all duration-300"
             >
-              <span className={`w-9 h-9 rounded-lg flex items-center justify-center mb-4 ${i % 3 === 0 ? 'bg-goldLight text-gold' : 'bg-surfaceAlt text-forest'}`}>
-                <Cross size={15} />
-              </span>
-              <h3 className="font-display text-base font-semibold text-ink mb-1.5">{v.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">{v.description}</p>
+              <h3 className="font-display text-xl font-semibold text-kingdomGreen mb-3">
+                {value.title}
+              </h3>
+
+              <p className="text-sm text-muted leading-relaxed">
+                {value.description}
+              </p>
             </motion.div>
           ))}
         </div>

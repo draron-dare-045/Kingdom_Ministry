@@ -10,17 +10,23 @@ export default function Preloader({ onDone }) {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    const showTimer = setTimeout(() => setExiting(true), MIN_DISPLAY_MS)
-    return () => clearTimeout(showTimer)
+
+    const timer = setTimeout(() => {
+      setExiting(true)
+    }, MIN_DISPLAY_MS)
+
+    return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
     if (!exiting) return
-    const t = setTimeout(() => {
+
+    const timer = setTimeout(() => {
       document.body.style.overflow = ''
       onDone()
     }, EXIT_ANIM_MS)
-    return () => clearTimeout(t)
+
+    return () => clearTimeout(timer)
   }, [exiting, onDone])
 
   return (
@@ -30,60 +36,73 @@ export default function Preloader({ onDone }) {
           key="preloader"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.02, transition: { duration: EXIT_ANIM_MS / 1000, ease: 'easeInOut' } }}
+          exit={{
+            opacity: 0,
+            scale: 1.02,
+            transition: {
+              duration: EXIT_ANIM_MS / 1000,
+              ease: 'easeInOut',
+            },
+          }}
           className="fixed inset-0 z-[100] bg-cream overflow-hidden"
         >
-          <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-forest/10 blur-[110px]" />
-          <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-gold/15 blur-[110px]" />
+          {/* Background Glow */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-forest/10 blur-[90px]" />
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold/15 blur-[90px]" />
 
-          {/* Outer div: centering ONLY, no animation.
-              Inner motion.div: animation ONLY, no positioning classes. */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          {/* Main Content */}
+          <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.6 }}
             >
               <motion.img
-                src="/logo.svg"
+                src="/logo.png"
                 alt={org.name}
                 animate={{ scale: [1, 1.04, 1] }}
-                transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-56 h-56 sm:w-72 sm:h-72 object-contain rounded-3xl shadow-lift"
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain"
               />
             </motion.div>
-          </div>
 
-          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-sm px-6 flex flex-col items-center top-[calc(50%+132px)] sm:top-[calc(50%+172px)]">
+            {/* Church Name */}
             <motion.h1
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="font-display text-3xl sm:text-4xl font-semibold text-kingdomGreen tracking-tight text-center"
+              transition={{ delay: 0.25 }}
+              className="mt-6 font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-kingdomGreen"
             >
               {org.name}
             </motion.h1>
 
+            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-2 text-center text-sm text-muted"
+              transition={{ delay: 0.4 }}
+              className="mt-2 max-w-md text-sm sm:text-base text-muted"
             >
               {org.tagline}
             </motion.p>
-          </div>
 
-          {/* Same split here: outer div centers the bar, inner motion.div
-              only handles the scaleX animation. */}
-          <div className="absolute bottom-14 left-1/2 -translate-x-1/2 w-[160px]">
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: (MIN_DISPLAY_MS - 200) / 1000, ease: 'easeInOut' }}
-              className="h-[2px] origin-left rounded-full"
-              style={{ background: 'linear-gradient(135deg, #3D0000 0%, #B0000D 100%)' }}
-            />
+            {/* Loading Bar */}
+            <div className="mt-10 w-32 sm:w-40 overflow-hidden rounded-full">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{
+                  duration: (MIN_DISPLAY_MS - 200) / 1000,
+                  ease: 'easeInOut',
+                }}
+                className="h-[3px] origin-left rounded-full bg-gradient-to-r from-forest via-leaf to-gold"
+              />
+            </div>
           </div>
         </motion.div>
       )}

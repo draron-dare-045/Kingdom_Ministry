@@ -5,20 +5,27 @@ import { org, heroBadges } from '../data'
 
 function ScriptureCard() {
   return (
-    <div className="card glow-border overflow-hidden shadow-lift">
+    <div className="bg-white rounded-3xl border border-border overflow-hidden shadow-soft">
       <div className="flex items-center gap-2 px-5 py-3 border-b border-border bg-surfaceAlt">
-        <BookOpen size={15} className="text-forest" />
-        <span className="font-label text-xs text-muted tracking-wide">{org.heroVerse.reference}</span>
+        <BookOpen size={16} className="text-kingdomGreen" />
+        <span className="font-label text-xs text-muted tracking-wide">
+          {org.heroVerse.reference}
+        </span>
       </div>
+
       <div className="p-6">
         <p className="font-display text-lg sm:text-xl leading-relaxed text-ink">
-          &ldquo;{org.heroVerse.text}&rdquo;
+          “{org.heroVerse.text}”
         </p>
+
         <div className="mt-6 pt-5 border-t border-border flex items-center justify-between">
           <span className="font-label text-xs uppercase tracking-widest text-gold font-semibold">
             {org.verseTag}
           </span>
-          <span className="font-label text-xs text-muted">{org.congregation}</span>
+
+          <span className="font-label text-xs text-muted">
+            {org.congregation}
+          </span>
         </div>
       </div>
     </div>
@@ -29,61 +36,58 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center bg-surface pt-24 pb-16"
     >
-      <div className="absolute inset-0 bg-hero-mesh" />
-      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-[0.35] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)]" />
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-forest/10 blur-[120px]" />
-      <div className="absolute top-60 -left-40 w-[400px] h-[400px] rounded-full bg-gold/10 blur-[120px]" />
-      <div className="absolute top-16 left-0 right-0 h-1.5 ribbon-strip opacity-80" />
+      {/* Background Pattern Only */}
+      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-10" />
 
-      <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      {/* Top Accent Line */}
+      <div className="absolute top-16 left-0 right-0 h-[2px] bg-gradient-to-r from-kingdomGreen via-gold to-kingdomGreen" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Side */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-surface mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-leaf animate-pulse" />
-            <span className="font-label text-xs text-muted">{org.revived}</span>
-          </motion.div>
-
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-semibold leading-[1.02] text-4xl sm:text-5xl lg:text-6xl text-ink"
+            transition={{ duration: 0.6 }}
+            className="font-display font-bold leading-tight"
           >
-            <span className="text-kingdomGreen">{org.name}</span>
-            <br />
-            <span className="text-2xl sm:text-3xl font-medium text-muted">{org.networkName}</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-kingdomGreen">
+              {org.name}
+            </span>
+
+            <span className="block mt-3 text-xl sm:text-2xl lg:text-3xl text-muted font-medium">
+              {org.networkName}
+            </span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-muted text-lg max-w-md leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-xl"
           >
             {org.tagline}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap gap-3"
           >
             <Link
               to="/founders"
-              className="btn-primary"
+              className="px-6 py-3 rounded-full bg-kingdomGreen text-white font-medium hover:opacity-90 transition"
             >
               Meet the Founders
             </Link>
+
             <Link
               to="/ministries"
-              className="btn-secondary"
+              className="px-6 py-3 rounded-full border border-kingdomGreen text-kingdomGreen font-medium hover:bg-kingdomGreen hover:text-white transition"
             >
               Watch KCM-TV
             </Link>
@@ -92,23 +96,24 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10 flex flex-wrap gap-3"
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-8 flex flex-wrap gap-2"
           >
-            {heroBadges.map((b) => (
+            {heroBadges.map((badge) => (
               <span
-                key={b}
-                className="px-3.5 py-1.5 rounded-full bg-surfaceAlt border border-border font-label text-xs text-forest font-medium"
+                key={badge}
+                className="px-3 py-1.5 rounded-full bg-white border border-border text-xs font-medium text-kingdomGreen"
               >
-                {b}
+                {badge}
               </span>
             ))}
           </motion.div>
         </div>
 
+        {/* Right Side */}
         <motion.div
-          initial={{ opacity: 0, y: 30, rotate: -1 }}
-          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <ScriptureCard />
@@ -119,8 +124,7 @@ export default function Hero() {
         href="#more"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.8 }}
-        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-muted hover:text-forest"
-        aria-label="Scroll down"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-muted hover:text-kingdomGreen"
       >
         <ArrowDown size={20} />
       </motion.a>

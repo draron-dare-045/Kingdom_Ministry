@@ -34,7 +34,7 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src="/logo.svg" alt={org.name} className="w-14 h-14 object-contain" />
+          <img src="/logo.png" alt={org.name} className="w-14 h-14 object-contain" />
           <span className="font-display font-semibold text-base sm:text-lg tracking-tight text-kingdomGreen leading-none">
             {org.name}
           </span>
