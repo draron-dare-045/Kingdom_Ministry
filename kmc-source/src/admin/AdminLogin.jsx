@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Lock, ShieldCheck, User } from 'lucide-react'
+import {
+  Lock,
+  ShieldCheck,
+  User,
+  Eye,
+  EyeOff,
+} from 'lucide-react'
 import { useAuth } from './AuthContext'
 import { org } from '../data'
 
@@ -9,6 +15,7 @@ export default function AdminLogin() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -68,7 +75,7 @@ export default function AdminLogin() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-5">
-          
+
           {/* Username */}
           <div>
             <label className="block text-sm font-medium text-muted mb-2">
@@ -106,17 +113,29 @@ export default function AdminLogin() {
               />
 
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
-                className="w-full pl-11 pr-4 py-3 border border-border rounded-xl bg-surfaceAlt focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                className="w-full pl-11 pr-12 py-3 border border-border rounded-xl bg-surfaceAlt focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
               />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-kingdomGreen transition-colors"
+              >
+                {showPassword ? (
+                  <EyeOff size={18} />
+                ) : (
+                  <Eye size={18} />
+                )}
+              </button>
             </div>
           </div>
 
-          {/* Error */}
+          {/* Error Message */}
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl px-4 py-3">
               {error}
@@ -127,7 +146,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#8B0000] hover:bg-[#6E0000] text-white font-medium py-3 rounded-xl transition duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
+            className="w-full bg-[#8B0000] hover:bg-[#6E0000] text-white font-medium py-3 rounded-xl transition duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <ShieldCheck size={18} />
             {loading ? 'Signing In...' : 'Sign In'}
