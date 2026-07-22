@@ -1,8 +1,3 @@
-// ============================================================
-// EDIT ME — this file holds every piece of real content on the
-// site. Content drawn from the Kingdom Call Mission Network
-// constitution document (revised & revived, March 2026).
-// ============================================================
 
 export const org = {
   name: 'Kingdom Call Mission Network',
@@ -15,7 +10,6 @@ export const org = {
     text:
       'The Spirit of the Lord God is upon me; because the Lord hath anointed me to preach good tidings (news) to the poor; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those that are bound.',
   },
-  registration: 'Registered as a limited company by guarantee \u00B7 Non-profit Christian parachurch ministry',
   phone: '0721 924 462',
   phoneSecondary: '0714 030 853',
   whatsappNumber: '0721 924 462',
