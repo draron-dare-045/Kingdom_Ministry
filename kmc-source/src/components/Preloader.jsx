@@ -59,7 +59,7 @@ export default function Preloader({ onDone }) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="font-display text-3xl sm:text-4xl font-semibold text-ink tracking-tight text-center"
+              className="font-display text-3xl sm:text-4xl font-semibold text-kingdomGreen tracking-tight text-center"
             >
               {org.name}
             </motion.h1>
@@ -82,7 +82,7 @@ export default function Preloader({ onDone }) {
               animate={{ scaleX: 1 }}
               transition={{ duration: (MIN_DISPLAY_MS - 200) / 1000, ease: 'easeInOut' }}
               className="h-[2px] origin-left rounded-full"
-              style={{ background: 'linear-gradient(135deg, #031B10 0%, #113925 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #3D0000 0%, #B0000D 100%)' }}
             />
           </div>
         </motion.div>

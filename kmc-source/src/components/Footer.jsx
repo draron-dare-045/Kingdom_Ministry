@@ -27,7 +27,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img src="/logo.svg" alt={org.name} className="w-16 h-16 object-contain bg-white/95 rounded-xl p-1" />
-            <span className="font-display font-semibold text-lg text-white">{org.name}</span>
+            <span className="font-display font-semibold text-lg text-kingdomGreenLight">{org.name}</span>
           </div>
           <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-xs">{org.tagline}</p>
           <div className="mt-5 flex flex-wrap items-center gap-3">

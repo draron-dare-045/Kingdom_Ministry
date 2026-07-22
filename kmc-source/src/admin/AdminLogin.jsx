@@ -39,7 +39,7 @@ export default function AdminLogin() {
         <div className="flex flex-col items-center text-center mb-7">
           <img src="/logo.svg" alt={org.name} className="w-24 h-24 object-contain mb-4" />
           <p className="eyebrow mb-2">admin access</p>
-          <h1 className="font-display text-xl font-semibold text-ink">{org.name}</h1>
+          <h1 className="font-display text-xl font-semibold text-kingdomGreen">{org.name}</h1>
           <p className="text-sm text-muted mt-1">Sign in to manage Activities & Gallery.</p>
         </div>
 

@@ -35,7 +35,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2.5">
           <img src="/logo.svg" alt={org.name} className="w-14 h-14 object-contain" />
-          <span className="font-display font-semibold text-base sm:text-lg tracking-tight text-ink leading-none">
+          <span className="font-display font-semibold text-base sm:text-lg tracking-tight text-kingdomGreen leading-none">
             {org.name}
           </span>
         </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
         <Link
           to="/contact"
           className="hidden lg:inline-flex items-center px-4 py-2 rounded-full text-white font-label font-medium text-sm shadow-soft hover:brightness-110 hover:-translate-y-0.5 transition-all duration-200"
-          style={{ background: 'linear-gradient(135deg, #031B10 0%, #113925 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #3D0000 0%, #B0000D 100%)' }}
         >
           Contact Us
         </Link>

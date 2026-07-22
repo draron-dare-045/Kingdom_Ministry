@@ -55,7 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-semibold leading-[1.02] text-4xl sm:text-5xl lg:text-6xl text-ink"
           >
-            <span className="gradient-text">{org.name}</span>
+            <span className="text-kingdomGreen">{org.name}</span>
             <br />
             <span className="text-2xl sm:text-3xl font-medium text-muted">{org.networkName}</span>
           </motion.h1>

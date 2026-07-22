@@ -7,7 +7,7 @@ html {
 }
 
 ::selection {
-  background: #14432B;
+  background: #B0000D;
   color: #ffffff;
 }
 
@@ -15,19 +15,19 @@ html {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F8F4;
+  background: #FAF7F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C7DACD;
+  background: #DDBFAE;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #14432B;
+  background: #B0000D;
 }
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, #042417 0%, #14432B 100%);
+    background: linear-gradient(135deg, #7A0000 0%, #B0000D 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -57,17 +57,17 @@ html {
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white font-label font-semibold text-sm shadow-lift hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
-    background: linear-gradient(135deg, #031B10 0%, #113925 100%);
+    background: linear-gradient(135deg, #3D0000 0%, #8A0000 100%);
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white font-label font-semibold text-sm shadow-lift hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
-    background: linear-gradient(135deg, #031B10 0%, #113925 100%);
+    background: linear-gradient(135deg, #7A0000 0%, #B0000D 100%);
   }
 
   .btn-gold {
     @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white font-label font-semibold text-sm shadow-lift hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
-    background: linear-gradient(135deg, #031B10 0%, #113925 100%);
+    background: linear-gradient(135deg, #CDAC5D 0%, #B0000D 100%);
   }
 
   .section-eyebrow-line {
@@ -83,7 +83,7 @@ html {
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, #042417, #C99A2E);
+    background: linear-gradient(135deg, #7A0000, #CDAC5D);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -99,14 +99,14 @@ html {
   .ribbon-strip {
     background: repeating-linear-gradient(
       115deg,
-      #031B10 0px,
-      #031B10 46px,
-      #C99A2E 46px,
-      #C99A2E 58px,
-      #7A1F1F 58px,
-      #7A1F1F 70px,
-      #F4E8C1 70px,
-      #F4E8C1 82px
+      #3D0000 0px,
+      #3D0000 46px,
+      #CDAC5D 46px,
+      #CDAC5D 58px,
+      #B0000D 58px,
+      #B0000D 70px,
+      #F0E6CE 70px,
+      #F0E6CE 82px
     );
   }
 
