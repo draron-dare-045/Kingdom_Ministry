@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle2, PhoneCall, ImageIcon, Loader2, CalendarDays } from 'lucide-react'
+import { PhoneCall, ImageIcon, Loader2, CalendarDays } from 'lucide-react'
 import { teachingHighlights, activityCategories, org } from '../data'
 import { api } from '../api'
 
@@ -119,26 +119,23 @@ function TeachingHighlights() {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-20">
-        {teachingHighlights.map((topic, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
-            className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="mt-1 bg-kingdomGreen/10 p-2 rounded-lg">
-              <CheckCircle2 size={20} className="text-kingdomGreen" />
-            </div>
-            <div>
-              <span className="block font-label text-[10px] text-gold font-bold mb-1">HIGHLIGHT {index + 1}</span>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white rounded-2xl border border-border shadow-sm p-6 md:p-10 mb-20"
+      >
+        <div className="flex flex-col divide-y divide-border">
+          {teachingHighlights.map((topic, index) => (
+            <div key={index} className="flex items-start gap-4 py-4 first:pt-0 last:pb-0">
+              <span className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-kingdomGreen/10 text-kingdomGreen font-label font-bold text-sm flex items-center justify-center">
+                {index + 1}
+              </span>
               <p className="text-ink font-medium leading-snug">{topic}</p>
             </div>
-          </motion.div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
