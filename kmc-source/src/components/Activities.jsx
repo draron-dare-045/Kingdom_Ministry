@@ -1,95 +1,108 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { PhoneCall, ImageIcon, Loader2, CalendarDays, GraduationCap, X } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { PhoneCall, ImageIcon, Loader2, CalendarDays } from 'lucide-react'
 import { teachingHighlights, activityCategories, org } from '../data'
 import { api } from '../api'
 
-function TeachingHighlightsModal({ onClose }) {
+const TEACHING_TAB = 'Teaching & Counselling'
+const tabs = [...activityCategories, TEACHING_TAB]
+
+function TeachingHighlights() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-ink/60 p-4 sm:p-6 overflow-y-auto"
-      onClick={onClose}
-    >
+    <div>
+      <div className="flex flex-col divide-y divide-border mb-10">
+        {teachingHighlights.map((topic, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.03 }}
+            className="flex items-start gap-4 py-4 first:pt-0 last:pb-0"
+          >
+            <span className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-kingdomGreen/10 text-kingdomGreen font-label font-bold text-sm flex items-center justify-center">
+              {index + 1}
+            </span>
+            <p className="text-ink font-medium leading-snug">{topic}</p>
+          </motion.div>
+        ))}
+      </div>
+
       <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.97 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 20, scale: 0.97 }}
-        className="bg-white rounded-2xl max-w-3xl w-full my-8 relative"
-        onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="bg-kingdomGreen rounded-[2rem] p-8 md:p-12 text-center text-white relative overflow-hidden"
       >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full bg-surface hover:bg-border transition-colors"
-          aria-label="Close"
-        >
-          <X size={18} className="text-ink" />
-        </button>
+        <h2 className="font-display text-3xl font-bold mb-4">And many more...</h2>
+        <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+          Give us a call for prayer, counselling, conferences, seminars, etc.
+        </p>
 
-        <div className="p-6 sm:p-10">
-          <p className="font-label text-xs uppercase tracking-[0.2em] text-gold font-bold mb-3">Ministry Focus</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-kingdomGreen mb-4 pr-8">
-            Teaching & Counselling Highlights
-          </h2>
-          <p className="text-muted text-base leading-relaxed mb-8">
-            By the grace of God, here are some of the topics we teach and counsel on in depth,
-            focused on spiritual maturity and emotional restoration.
-          </p>
-
-          <div className="flex flex-col divide-y divide-border mb-10">
-            {teachingHighlights.map((topic, index) => (
-              <div key={index} className="flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                <span className="mt-0.5 flex-shrink-0 w-8 h-8 rounded-full bg-kingdomGreen/10 text-kingdomGreen font-label font-bold text-sm flex items-center justify-center">
-                  {index + 1}
-                </span>
-                <p className="text-ink font-medium leading-snug">{topic}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-kingdomGreen rounded-[1.5rem] p-6 sm:p-8 text-center text-white relative overflow-hidden">
-            <h3 className="font-display text-2xl font-bold mb-3">And many more...</h3>
-            <p className="text-white/80 mb-6 max-w-xl mx-auto">
-              Give us a call for prayer, counselling, conferences, seminars, etc.
-            </p>
-            <a
-              href={`tel:${org.phone}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold rounded-full font-bold text-white hover:scale-105 transition-transform"
-            >
-              <PhoneCall size={18} /> Call {org.phone}
-            </a>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={`tel:${org.phone}`}
+            className="flex items-center justify-center gap-2 px-8 py-4 bg-gold rounded-full font-bold text-white hover:scale-105 transition-transform"
+          >
+            <PhoneCall size={18} /> Call {org.phone}
+          </a>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 
-function TeachingHighlightsCard({ onOpen }) {
+function ActivitiesGrid({ activities, loading }) {
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center gap-2 text-muted text-sm py-16">
+        <Loader2 size={16} className="animate-spin" /> Loading activities...
+      </div>
+    )
+  }
+
+  if (activities.length === 0) {
+    return (
+      <div className="text-center py-16 text-muted bg-white rounded-2xl border border-border">
+        <ImageIcon size={26} className="mx-auto mb-3 opacity-50" />
+        <p className="text-sm">More activities and photos are on the way — check back soon.</p>
+      </div>
+    )
+  }
+
   return (
-    <motion.button
-      onClick={onOpen}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-left bg-kingdomGreen rounded-2xl border border-kingdomGreen shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col"
-    >
-      <div className="aspect-video bg-kingdomGreen/90 flex items-center justify-center">
-        <GraduationCap size={36} className="text-gold" />
-      </div>
-      <div className="p-6 flex-1 flex flex-col">
-        <p className="font-label text-xs text-gold font-bold mb-1.5">{teachingHighlights.length} Topics</p>
-        <h3 className="font-display text-lg font-semibold text-white">
-          Teaching & Counselling Highlights
-        </h3>
-        <p className="text-sm text-white/80 mt-2 leading-relaxed">
-          What we teach and counsel on in depth, by the grace of God.
-        </p>
-        <span className="mt-4 text-xs font-label font-bold text-gold">Tap to view all &rarr;</span>
-      </div>
-    </motion.button>
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {activities.map((a, index) => (
+        <motion.div
+          key={a.id}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.05 }}
+          className="bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+        >
+          <div className="aspect-video bg-surface flex items-center justify-center overflow-hidden">
+            {a.image ? (
+              <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
+            ) : (
+              <ImageIcon size={22} className="text-muted" />
+            )}
+          </div>
+          <div className="p-6">
+            <p className="font-label text-xs text-gold font-bold mb-1.5">{a.category}</p>
+            <h3 className="font-display text-lg font-semibold text-ink">{a.title}</h3>
+            {a.description && (
+              <p className="text-sm text-muted mt-2 leading-relaxed">{a.description}</p>
+            )}
+            {a.date && (
+              <p className="flex items-center gap-1.5 text-xs text-muted mt-3">
+                <CalendarDays size={13} /> {a.date}
+              </p>
+            )}
+          </div>
+        </motion.div>
+      ))}
+    </div>
   )
 }
 
@@ -97,7 +110,6 @@ export default function Activities() {
   const [activities, setActivities] = useState([])
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState('All')
-  const [highlightsOpen, setHighlightsOpen] = useState(false)
 
   useEffect(() => {
     api
@@ -107,6 +119,7 @@ export default function Activities() {
       .finally(() => setLoading(false))
   }, [])
 
+  const isTeaching = category === TEACHING_TAB
   const filtered =
     category === 'All' ? activities : activities.filter((a) => a.category === category)
 
@@ -120,16 +133,17 @@ export default function Activities() {
         >
           <p className="font-label text-xs uppercase tracking-[0.2em] text-gold font-bold mb-4">What We're Doing</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-kingdomGreen mb-6">
-            Our Activities
+            {isTeaching ? 'Teaching & Counselling Highlights' : 'Our Activities'}
           </h1>
           <p className="text-muted text-lg leading-relaxed">
-            A look at outreach, KCM-TV, welfare and mentorship in action across churches
-            and communities.
+            {isTeaching
+              ? 'By the grace of God, here are some of the topics we teach and counsel on in depth, focused on spiritual maturity and emotional restoration.'
+              : 'A look at outreach, KCM-TV, welfare and mentorship in action across churches and communities.'}
           </p>
         </motion.div>
 
         <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {activityCategories.map((cat) => (
+          {tabs.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategory(cat)}
@@ -144,60 +158,12 @@ export default function Activities() {
           ))}
         </div>
 
-        {loading ? (
-          <div className="flex items-center justify-center gap-2 text-muted text-sm py-16">
-            <Loader2 size={16} className="animate-spin" /> Loading activities...
-          </div>
+        {isTeaching ? (
+          <TeachingHighlights />
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <TeachingHighlightsCard onOpen={() => setHighlightsOpen(true)} />
-
-            {filtered.length === 0 ? (
-              <div className="sm:col-span-2 lg:col-span-2 flex items-center justify-center text-center py-10 px-6 text-muted bg-white rounded-2xl border border-border">
-                <div>
-                  <ImageIcon size={26} className="mx-auto mb-3 opacity-50" />
-                  <p className="text-sm">More activities and photos are on the way — check back soon.</p>
-                </div>
-              </div>
-            ) : (
-              filtered.map((a, index) => (
-                <motion.div
-                  key={a.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
-                >
-                  <div className="aspect-video bg-surface flex items-center justify-center overflow-hidden">
-                    {a.image ? (
-                      <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
-                    ) : (
-                      <ImageIcon size={22} className="text-muted" />
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <p className="font-label text-xs text-gold font-bold mb-1.5">{a.category}</p>
-                    <h3 className="font-display text-lg font-semibold text-ink">{a.title}</h3>
-                    {a.description && (
-                      <p className="text-sm text-muted mt-2 leading-relaxed">{a.description}</p>
-                    )}
-                    {a.date && (
-                      <p className="flex items-center gap-1.5 text-xs text-muted mt-3">
-                        <CalendarDays size={13} /> {a.date}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              ))
-            )}
-          </div>
+          <ActivitiesGrid activities={filtered} loading={loading} />
         )}
       </div>
-
-      <AnimatePresence>
-        {highlightsOpen && <TeachingHighlightsModal onClose={() => setHighlightsOpen(false)} />}
-      </AnimatePresence>
     </section>
   )
 }
