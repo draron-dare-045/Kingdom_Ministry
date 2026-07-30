@@ -93,7 +93,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              to="/activities"
+              to="/activities?tab=teaching"
               className="px-6 py-3 rounded-full border border-kingdomGreen text-kingdomGreen font-medium hover:bg-kingdomGreen hover:text-white transition"
             >
               Teaching & Counselling

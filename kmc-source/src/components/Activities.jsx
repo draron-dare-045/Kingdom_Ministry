@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { PhoneCall, ImageIcon, Loader2, CalendarDays } from 'lucide-react'
 import { teachingHighlights, activityCategories, org } from '../data'
@@ -107,9 +108,12 @@ function ActivitiesGrid({ activities, loading }) {
 }
 
 export default function Activities() {
+  const [searchParams] = useSearchParams()
   const [activities, setActivities] = useState([])
   const [loading, setLoading] = useState(true)
-  const [category, setCategory] = useState('All')
+  const [category, setCategory] = useState(
+    searchParams.get('tab') === 'teaching' ? TEACHING_TAB : 'All'
+  )
 
   useEffect(() => {
     api
