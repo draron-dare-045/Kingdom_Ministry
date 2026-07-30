@@ -92,12 +92,11 @@ export default function Hero() {
               Watch KCM-TV
             </Link>
 
-
             <Link
-              to="/ministries"
+              to="/activities"
               className="px-6 py-3 rounded-full border border-kingdomGreen text-kingdomGreen font-medium hover:bg-kingdomGreen hover:text-white transition"
             >
-              TEACHING AND COUNSELLING HIGHLIGHTS
+              Teaching & Counselling
             </Link>
 
           </motion.div>

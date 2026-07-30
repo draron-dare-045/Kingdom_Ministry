@@ -1,6 +1,6 @@
-
 export const org = {
   name: 'Kingdom Call Mission Network',
+  networkName: 'Restoring the Gospel of the Kingdom',
   shortCode: 'K.C.M-NETWORK',
   verseTag: 'ISAIAH 61:1-11 \u00B7 MINISTRY',
   tagline:
@@ -10,17 +10,37 @@ export const org = {
     text:
       'The Spirit of the Lord God is upon me; because the Lord hath anointed me to preach good tidings (news) to the poor; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those that are bound.',
   },
+  congregation: 'KCM Network',
   phone: '0721 924 462',
   phoneSecondary: '0714 030 853',
   whatsappNumber: '0721 924 462',
 }
+
+export const teachingHighlights = [
+  "Triumph over emotional injuries (wounds) which come through offenses and the like. (Inner healing)",
+  "The MANIFOLD WISDOM AND POWER of God (All sided wisdom of God)",
+  "The power and value of true praise and worship",
+  "Anointing deliverers in families, churches, nation and in organizations",
+  "The danger of allowing a LEADERSHIP VACUUM anywhere in life",
+  "The MONSTER called negative attitude especially in family, leadership and in relationships",
+  "Benefits of the SPIRIT OF WISDOM AND REVELATION",
+  "The danger of worshiping idols",
+  "Defeating discouragement and spiritual exhaustion (Elijah versus Jezebel tragedy)",
+  "Deliverance through destroying the power of idols",
+  "Emergence of a GOVERNMENTAL and spiritually MILITANT church on earth",
+  "Understanding the power of God-ordained authority and how to apply it",
+  "How to make salvation SWEET, BEAUTIFUL and FRUITFUL through knowledge, wisdom and understanding",
+  "Seeds of a beautiful and successful marriage in our modern times",
+  "Seeds for successful and beautiful relationships with a modern empowered partner/spouse",
+  "Hunting for a soul mate (for the single and the searching)",
+  "The power of your God-ordained DIFFERENCE."
+]
 
 export const socialLinks = [
   { label: 'Kingdom Call Mission Network', platform: 'facebook', href: 'https://facebook.com/KingdomMissionsCentre' },
   { label: 'Kingdom Relationships, Families & Marriages', platform: 'facebook', href: 'https://facebook.com/KingdomRelationshipsFamiliesMarriages' },
   { label: 'Pst. Donald Wathome', platform: 'facebook', href: 'https://facebook.com/PstDonaldWathome' },
   { label: '@donald_wathome', platform: 'tiktok', href: 'https://tiktok.com/@donald_wathome' },
-  // TODO: swap in the real Kingdom Call Mission TV channel URL
   { label: 'Kingdom Call Mission TV', platform: 'youtube', href: 'https://youtube.com/@donaldevangelist123?si=VoYBUds68PO_CTA-' },
 ]
 
@@ -49,7 +69,7 @@ export const about = {
   eyebrow: 'who we are',
   heading: 'A platform for restoration',
   paragraphs: [
-    'Kingdom Call Mission Network  is a platform, a link and a network for ministering inner healing, physical healing, deliverance and restoration \u2014 to people, churches and communities broken, displaced and crippled by the battles of life and ministry, in family, in relationships, in business and in leadership.',
+    'Kingdom Call Mission Network is a platform, a link and a network for ministering inner healing, physical healing, deliverance and restoration \u2014 to people, churches and communities broken, displaced and crippled by the battles of life and ministry, in family, in relationships, in business and in leadership.',
     'It is a platform for the restoration of the gospel of the kingdom of God, and for the mentorship of young gospel ministers in life and ministry. It is about meeting the pressing need for equipping, mentoring and empowering little children and teenagers, in church and in society.',
     'It is about restoring hope to the hopeless and inspiring the tired, the exhausted and those about to give up in life and ministry \u2014 and about connecting the skilled, the empowered and the privileged with the needy, the poor and the oppressed.',
   ],
@@ -99,7 +119,7 @@ export const founders = {
   names: 'Pastor Donald & Monica',
   roles: 'Ordained ministers \u00B7 trained counsellors \u00B7 church planters \u00B7 motivational speakers',
   photo: '/founders.jpg',
-  word: 'For over twenty years we resisted this call, afraid of what it would cost to step outside the walls of traditional congregational ministry. But God kept returning us to the story of Mephibosheth \u2014 a broken, displaced man brought out of Lo Debar to the King\u2019s table. That story became our own testimony, and it is why Kingdom Call Mission Network exists today: to be a hand extended to the broken, the hurting and the forgotten, and to restore the gospel of the kingdom to the body of Christ. Whatever battle life or ministry has left you carrying \u2014 in your family, your relationships, your business or your leadership \u2014 you are welcome at this table. Jesus Christ the King of Kings is inviting everyone to his Kingdom table . Call us. Isaiah 61:1-11 is not just our passage ; it is our assignment.',
+  word: 'For over twenty years we resisted this call, afraid of what it would cost to step outside the walls of traditional congregational ministry. But God kept returning us to the story of Mephibosheth \u2014 a broken, displaced man brought out of Lo Debar by King David (2 Samuel 9:1-13). That story became our own testimony, and it is why Kingdom Call Mission Network exists today: to be a hand extended to the broken, the hurting and the forgotten, and to restore the gospel of the kingdom to the body of Christ. Whatever battle life or ministry has left you carrying \u2014 in your family, your relationships, your business or your leadership \u2014 you are welcome at this table. Jesus Christ the King of Kings is inviting everyone to his Kingdom table . Call us. Isaiah 61:1-11 is not just our passage ; it is our assignment.',
   quoteRef: 'Daniel 5:12,14 \u00B7 "The Daniel\u2019s Call" \u2014 Call us now.',
 }
 
@@ -197,13 +217,6 @@ export const faithStatement = [
 
 export const activityCategories = ['All', 'Outreach', 'Inner Healing', 'KCM-TV', 'Children & Teens', 'Welfare']
 
-// No real activity posts yet — these will come from the admin dashboard
-// once staff start posting. Kept empty so the Activities section shows
-// its "Coming Soon" empty state instead of placeholder entries.
 export const activities = []
 
-// No real testimonies collected yet — kept empty so the Testimonials
-// section shows its "Coming Soon" empty state instead of placeholder
-// quotes. Real entries (submitted via the form below, or added by an
-// admin) will follow this shape: { name, context, quote }.
 export const testimonials = []
